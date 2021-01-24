@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "MyDealz comment searcher",
+  "description": "An extension to search through comments in MyDealz.",
+  "version": "0.1",
+
+  "permissions": ["tabs", "https://www.mydealz.de/"],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://mydealz.de/*"],
+      "js": ["script.js"]
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "search_icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Find comments in MyDealz"
+  }
+}
